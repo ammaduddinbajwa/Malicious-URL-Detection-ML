@@ -1,5 +1,19 @@
 # Malicious URL Detection Using Machine Learning
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-Random%20Forest-F7931E?logo=scikitlearn&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM-Gradient%20Boosting-02569B)
+![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-EC1C24)
+![Accuracy](https://img.shields.io/badge/Best%20Accuracy-96.6%25-2EA44F)
+
+Supervised machine learning classifiers trained to detect malicious URLs (phishing, malware, defacement) at scale, benchmarked against a 650K+ URL dataset.
+
+**At a glance**
+- Benchmarked **Random Forest, LightGBM and XGBoost** on 651,191 real-world URLs across 4 classes: benign, defacement, phishing, malware.
+- Engineered 15+ URL-structure features (IP usage, Google index, special-character counts, length, etc.) with encoding, normalisation and dimensionality reduction.
+- **Random Forest reached 96.6% accuracy** (best overall), LightGBM 95.6%, XGBoost 93.2% — full precision/recall/F1 breakdown below.
+- Full write-up, figures and code in [report.pdf](report.pdf).
+
 ## Overview
 This project explores the use of machine learning algorithms to detect malicious URLs, addressing limitations of traditional blacklist methods. Malicious URLs pose significant cybersecurity threats, leading to scams like phishing, spam, and malware distribution. The study formalizes the problem as a classification task and evaluates models such as Random Forest, LightGBM, and XGBoost on a large dataset. It includes data preprocessing, feature engineering, model training, and performance analysis to achieve high detection accuracy.
 
@@ -110,6 +124,11 @@ Visualizations include confusion matrices, feature importance graphs, and word c
 7. Rakesh Verma et al., "What’s in a URL: Fast Feature Extraction and Malicious URL Detection," ACM Conference on Data and Application Security and Privacy, 2017.
 8. Kaggle Dataset: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset
 
-For detailed figures (e.g., flowcharts, code snippets, confusion matrices), code implementations, and full analysis, refer to the attached [report.docx](report.docx) or convert it to PDF for better viewing.
+For detailed figures (e.g., flowcharts, code snippets, confusion matrices), code implementations, and full analysis, refer to the attached [report.pdf](report.pdf).
 
 This project demonstrates practical ML applications in cybersecurity, ideal for roles in data science, security engineering, or AI research.
+
+---
+
+**Ammad Ud Din Bajwa** — MSc Cybersecurity, National College of Ireland · SOC Analyst | Incident Response | Cybersecurity Operations
+[LinkedIn](https://www.linkedin.com/in/ammaduddinbajwa) · [GitHub](https://github.com/ammaduddinbajwa) · ammaduddinbajwa702@gmail.com
