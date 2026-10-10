@@ -12,7 +12,13 @@ Supervised machine learning classifiers trained to detect malicious URLs (phishi
 - Benchmarked **Random Forest, LightGBM and XGBoost** on 651,191 real-world URLs across 4 classes: benign, defacement, phishing, malware.
 - Engineered 15+ URL-structure features (IP usage, Google index, special-character counts, length, etc.) with encoding, normalisation and dimensionality reduction.
 - **Random Forest reached 96.6% accuracy** (best overall), LightGBM 95.6%, XGBoost 93.2% — full precision/recall/F1 breakdown below.
-- Full write-up, figures and code in [report.pdf](report.pdf).
+- Full write-up and figures in [report.pdf](report.pdf). No standalone executable code or notebook is currently published.
+
+## Published Materials and Evaluation Limits
+
+This repository currently contains this README and `report.pdf`; it does not include a runnable training notebook, dependency file, dataset snapshot, or saved predictions. Metrics below are reported results and have not been independently reproduced from repository code.
+
+The documented methodology mentions binary label mapping, while the results present four classes. These must be reconciled against the original experiment before treating the metrics as a reproducible benchmark. The originally listed per-class correct-prediction counts have been omitted here because their relationship to the stated dataset distribution and 80/20 split is unclear.
 
 ## Overview
 This project explores the use of machine learning algorithms to detect malicious URLs, addressing limitations of traditional blacklist methods. Malicious URLs pose significant cybersecurity threats, leading to scams like phishing, spam, and malware distribution. The study formalizes the problem as a classification task and evaluates models such as Random Forest, LightGBM, and XGBoost on a large dataset. It includes data preprocessing, feature engineering, model training, and performance analysis to achieve high detection accuracy.
@@ -40,7 +46,7 @@ The dataset has no null values and includes columns for URL and label.
 - Remove missing data (none present).
 - Extract features to reduce dimensionality.
 - Encode categorical features (e.g., IP address, Google Index) using count encoding.
-- Map labels: Benign to 0, Malicious (defacement, phishing, malware) to 1.
+- The report summary mentions mapping Benign to 0 and other categories to 1. The four-class result tables below require a separate label setup; the final experimental configuration needs verification.
 - Normalize data to rescale values between 0 and 1, handling outliers.
 - Split data: 80% training, 20% testing.
 
@@ -79,15 +85,12 @@ Hyperparameters are tuned to optimize metrics like accuracy, precision, recall, 
 ## Results and Analysis
 Simulations were run on Google Colab.
 
-### Performance Metrics
+### Reported Performance Metrics
 - **Random Forest**: 96.6% accuracy
-  - Correctly detected: 84,334 benign, 19,154 defacement, 6,145 phishing, 16,218 malware.
 
 - **LightGBM**: 95.6% accuracy
-  - Correctly detected: 84,389 benign, 19,018 defacement, 5,779 phishing, 15,300 malware.
 
 - **XGBoost**: 93.2% accuracy
-  - Correctly detected: 84,267 benign, 18,589 defacement, 4,912 phishing, 13,655 malware.
 
 #### Precision Analysis
 | Algorithm      | Benign | Defacement | Phishing | Malware |
@@ -110,7 +113,7 @@ Simulations were run on Google Colab.
 | LightGBM       | 0.98   | 0.97       | 0.92     | 0.85    |
 | XGBoost        | 0.97   | 0.92       | 0.83     | 0.80    |
 
-Random Forest outperforms overall, especially in precision and F1 scores. LightGBM excels in recall for benign and defacement categories.
+The reported results rank Random Forest highest by overall accuracy. These comparisons remain provisional until the label mapping, test-set composition, and original evaluation outputs are reconciled.
 
 Visualizations include confusion matrices, feature importance graphs, and word clouds (refer to figures in the attached document).
 
